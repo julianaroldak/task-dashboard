@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Soft Power 90s is a personal outfit builder for mixing tactile, fitted, and imperfect pieces."
+    />
+    <title>Soft Power 90s | Outfit Builder</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="data.js" defer></script>
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <main class="page-shell">
+      <header class="hero">
+        <p class="eyebrow">Personal style practice</p>
+        <h1>SOFT POWER <em>90s</em></h1>
+        <p class="tagline">Mix your own pieces. Find your formula.</p>
+      </header>
+
+      <section class="builder-layout" aria-label="Outfit builder">
+        <section class="outfit-card card">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">The edit</p>
+              <h2>Your look</h2>
+            </div>
+            <p class="stage-note">Tap a piece below to layer it in.</p>
+          </div>
+          <div id="outfit-stage" class="outfit-stage" aria-live="polite"></div>
+          <div class="look-actions">
+            <button id="randomize-button" class="button button-dark" type="button">Randomize</button>
+            <button id="reset-button" class="button button-quiet" type="button">Reset</button>
+            <button id="save-button" class="button button-rose" type="button">Save this look</button>
+          </div>
+        </section>
+
+        <aside class="formula-card card" aria-labelledby="formula-title">
+          <p class="eyebrow">The formula</p>
+          <h2 id="formula-title">Formula check</h2>
+          <div class="score-wrap"><strong id="formula-score">0/5</strong><span>elements working together</span></div>
+          <ul id="formula-list" class="formula-list"></ul>
+        </aside>
+      </section>
+
+      <section class="wardrobe card" aria-labelledby="wardrobe-title">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">The wardrobe</p>
+            <h2 id="wardrobe-title">Choose a piece</h2>
+          </div>
+          <p id="picker-instruction" class="stage-note">Start with the hair.</p>
+        </div>
+        <div id="category-tabs" class="category-tabs" role="tablist" aria-label="Wardrobe categories"></div>
+        <div id="item-grid" class="item-grid"></div>
+      </section>
+
+      <section class="saved-section" aria-labelledby="saved-title">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Keepers</p>
+            <h2 id="saved-title">Saved Looks</h2>
+          </div>
+          <p id="saved-count" class="stage-note"></p>
+        </div>
+        <div id="saved-looks" class="saved-looks" aria-live="polite"></div>
+      </section>
+    </main>
+
+    <footer>Juliana | Soft Power 90s — Building a wardrobe that feels like me. Less trend. More personal style.</footer>
+  </body>
+</html>

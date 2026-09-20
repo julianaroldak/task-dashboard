@@ -1,0 +1,79 @@
+:root {
+  --cream: #f7f1e7;
+  --paper: #fffaf2;
+  --ink: #352923;
+  --muted: #806d63;
+  --rose: #9d5b5e;
+  --line: #e8d8c8;
+  --shadow: 0 15px 35px rgba(79, 48, 35, 0.1);
+}
+
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--cream); color: var(--ink); font-family: Arial, Helvetica, sans-serif; }
+button { font: inherit; }
+.page-shell { width: min(1120px, calc(100% - 32px)); margin: 0 auto; }
+.hero { padding: 74px 0 42px; text-align: center; }
+.eyebrow { margin: 0 0 9px; color: var(--rose); font-size: 0.68rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; }
+h1, h2, .layer-name { font-family: Georgia, "Times New Roman", serif; font-weight: 500; }
+h1 { margin: 0; font-size: clamp(2.6rem, 8vw, 5.7rem); letter-spacing: -0.07em; line-height: 0.9; }
+h1 em { color: var(--rose); font-style: italic; }
+h2 { margin: 0; font-size: clamp(1.7rem, 3vw, 2.25rem); letter-spacing: -0.04em; }
+.tagline { margin: 21px 0 0; color: var(--muted); font-size: 1.03rem; }
+.card { background: rgba(255, 250, 242, 0.86); border: 1px solid rgba(232, 216, 200, 0.75); border-radius: 24px; box-shadow: var(--shadow); }
+.builder-layout { display: grid; grid-template-columns: minmax(0, 1.6fr) minmax(280px, 0.8fr); gap: 24px; align-items: start; }
+.outfit-card, .formula-card, .wardrobe { padding: clamp(21px, 4vw, 34px); }
+.section-heading { display: flex; justify-content: space-between; gap: 18px; align-items: flex-start; margin-bottom: 24px; }
+.stage-note { max-width: 210px; margin: 4px 0 0; color: var(--muted); font-size: 0.82rem; line-height: 1.45; text-align: right; }
+.outfit-stage { display: grid; gap: 10px; min-height: 386px; }
+.stage-layer { display: grid; grid-template-columns: 118px 1fr; min-height: 66px; overflow: hidden; border: 1px solid var(--line); border-radius: 13px; background: var(--paper); }
+.swatch { position: relative; display: flex; align-items: flex-end; padding: 9px; background: var(--swatch, #e7dbcb); color: rgba(53, 41, 35, 0.68); font-size: 0.59rem; font-weight: 700; letter-spacing: 0.11em; text-transform: uppercase; }
+.swatch::after { content: "Photo slot"; opacity: 0.76; }
+.layer-copy { display: flex; flex-direction: column; justify-content: center; padding: 10px 15px; }
+.layer-label { color: var(--muted); font-size: 0.63rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; }
+.layer-name { margin-top: 3px; font-size: 1.2rem; }
+.stage-layer.is-empty .layer-name { color: var(--muted); font-family: Arial, Helvetica, sans-serif; font-size: 0.83rem; }
+.stage-layer.is-empty .swatch { background: repeating-linear-gradient(-45deg, #f5ebdc, #f5ebdc 8px, #ecdfce 8px, #ecdfce 10px); }
+.look-actions { display: flex; flex-wrap: wrap; gap: 9px; margin-top: 20px; }
+.button { cursor: pointer; border: 1px solid transparent; border-radius: 999px; padding: 10px 16px; font-size: 0.82rem; font-weight: 700; transition: transform 150ms ease, background 150ms ease; }
+.button:hover { transform: translateY(-2px); }
+.button-dark { background: var(--ink); color: white; }
+.button-quiet { border-color: var(--line); background: transparent; color: var(--ink); }
+.button-rose { background: var(--rose); color: white; }
+.score-wrap { display: flex; align-items: baseline; gap: 10px; margin: 25px 0 16px; }
+.score-wrap strong { color: var(--rose); font-family: Georgia, "Times New Roman", serif; font-size: 3.15rem; font-weight: 400; letter-spacing: -0.09em; }
+.score-wrap span { color: var(--muted); font-size: 0.76rem; line-height: 1.3; }
+.formula-list { display: grid; gap: 10px; padding: 0; margin: 0; list-style: none; }
+.formula-item { display: flex; gap: 10px; align-items: flex-start; font-size: 0.86rem; line-height: 1.3; }
+.formula-mark { flex: 0 0 21px; display: grid; place-items: center; height: 21px; border-radius: 50%; background: #eadbd3; color: #8a5551; font-size: 0.75rem; font-weight: 700; }
+.formula-item.is-met .formula-mark { background: #d9e3ce; color: #48603b; }
+.wardrobe { margin-top: 24px; }
+.category-tabs { display: flex; gap: 7px; overflow-x: auto; margin-bottom: 20px; padding-bottom: 3px; }
+.category-tab { flex: 0 0 auto; cursor: pointer; border: 1px solid var(--line); border-radius: 999px; padding: 8px 13px; background: transparent; color: var(--muted); font-size: 0.76rem; font-weight: 700; text-transform: capitalize; }
+.category-tab[aria-selected="true"] { border-color: var(--ink); background: var(--ink); color: white; }
+.item-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; }
+.item-card { cursor: pointer; min-width: 0; padding: 0; overflow: hidden; border: 1px solid var(--line); border-radius: 14px; background: var(--paper); color: inherit; text-align: left; transition: transform 150ms ease, box-shadow 150ms ease, border 150ms ease; }
+.item-card:hover, .item-card.is-selected { transform: translateY(-3px); border-color: var(--rose); box-shadow: 0 9px 18px rgba(89, 49, 40, 0.12); }
+.item-swatch { height: 92px; padding: 9px; display: flex; align-items: flex-end; background: var(--swatch); color: rgba(53, 41, 35, 0.68); font-size: 0.56rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; }
+.item-swatch::after { content: "Photo slot"; }
+.item-copy { padding: 11px; }
+.item-name { display: block; min-height: 34px; font-family: Georgia, "Times New Roman", serif; font-size: 0.93rem; line-height: 1.12; }
+.item-tags { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 8px; }
+.tag { border-radius: 999px; padding: 3px 6px; background: #f0e5d7; color: #7e5b4e; font-size: 0.59rem; font-weight: 700; }
+.saved-section { padding: 54px 0 66px; }
+.saved-looks { display: grid; grid-template-columns: repeat(auto-fill, minmax(205px, 1fr)); gap: 14px; }
+.saved-look, .empty-saves { border: 1px solid var(--line); border-radius: 16px; background: var(--paper); box-shadow: 0 6px 16px rgba(79, 48, 35, 0.06); }
+.saved-look { overflow: hidden; }
+.saved-preview { display: grid; grid-template-columns: repeat(5, 1fr); height: 62px; }
+.saved-preview span { background: var(--swatch); }
+.saved-copy { display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: 12px; }
+.saved-copy strong { font-family: Georgia, "Times New Roman", serif; font-weight: 500; }
+.remove-button { cursor: pointer; border: 0; background: transparent; color: var(--rose); font-size: 0.72rem; font-weight: 700; }
+.empty-saves { grid-column: 1 / -1; padding: 24px; color: var(--muted); font-size: 0.88rem; }
+footer { padding: 27px 20px; background: var(--ink); color: #f2e6d8; font-size: 0.76rem; line-height: 1.5; text-align: center; }
+@media (max-width: 720px) {
+  .hero { padding-top: 54px; }
+  .builder-layout { grid-template-columns: 1fr; }
+  .formula-card { order: -1; }
+  .item-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .stage-layer { grid-template-columns: 90px 1fr; }
+}
