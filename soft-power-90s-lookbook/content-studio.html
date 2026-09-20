@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="A private content planning space for the Soft Power 90s saved looks."
+    />
+    <title>Soft Power 90s | Content Studio</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="content-studio.css" />
+    <script src="data.js" defer></script>
+    <script src="content-studio.js" defer></script>
+  </head>
+  <body>
+    <main class="studio-shell">
+      <header class="studio-header">
+        <a class="back-link" href="index.html">← Outfit Builder</a>
+        <p class="eyebrow">Private local planning</p>
+        <h1>CONTENT <em>STUDIO</em></h1>
+        <p class="studio-intro">A quiet working edit for the looks you keep returning to.</p>
+      </header>
+
+      <section id="empty-state" class="studio-empty" hidden>
+        <p class="eyebrow">Nothing to place yet</p>
+        <h2>Start with a saved look.</h2>
+        <p>Build and save a look first, then return here to place it in the editorial and story notes.</p>
+        <a class="text-link" href="index.html">Go to Outfit Builder →</a>
+      </section>
+
+      <section id="studio-content" hidden>
+        <section class="chapter-section" aria-labelledby="chapter-title">
+          <div class="section-intro">
+            <p class="eyebrow">Editorial sequence</p>
+            <h2 id="chapter-title">CHAPTER 01 — THE FORMULA</h2>
+          </div>
+          <div class="carousel" aria-roledescription="carousel" aria-label="Chapter 01 editorial slides">
+            <div id="carousel-track" class="carousel-track"></div>
+            <div class="carousel-controls">
+              <button id="previous-slide" class="icon-button" type="button" aria-label="Previous slide">←</button>
+              <p id="slide-position" class="slide-position" aria-live="polite"></p>
+              <button id="next-slide" class="icon-button" type="button" aria-label="Next slide">→</button>
+            </div>
+            <div id="carousel-indicators" class="carousel-indicators" aria-label="Choose a slide"></div>
+          </div>
+        </section>
+
+        <section class="planner-section" aria-labelledby="instagram-title">
+          <div class="section-intro">
+            <p class="eyebrow">Instagram planner</p>
+            <h2 id="instagram-title">Sequence &amp; notes</h2>
+            <p>Move the chapter into its publishing order, then hold the words that belong with each frame.</p>
+          </div>
+          <ol id="instagram-planner" class="instagram-planner"></ol>
+        </section>
+
+        <section class="stories-section" aria-labelledby="stories-title">
+          <div class="section-intro">
+            <p class="eyebrow">Stories planner</p>
+            <h2 id="stories-title">Six small directions</h2>
+          </div>
+          <div id="stories-planner" class="stories-planner"></div>
+        </section>
+      </section>
+    </main>
+    <footer>Soft Power 90s — kept on this device, for your own process.</footer>
+  </body>
+</html>
